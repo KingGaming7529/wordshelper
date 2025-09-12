@@ -56,7 +56,7 @@ async function makeGroqRequest(prompt, retries = 3) {
     }
   }
 }
-
+console.log('API Key:', process.env.GROQ_API_KEY);
 app.post('/api/translate', async (req, res) => {
   try {
     const { word } = req.body;
