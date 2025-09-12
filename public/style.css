@@ -82,10 +82,19 @@ h1 {
     margin-bottom: 50px;
 }
 
+.input-with-audio {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 25px;
+    max-width: 500px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #wordInput {
     width: 100%;
-    max-width: 500px;
-    padding: 20px 25px;
+    padding: 20px 60px 20px 25px;
     border: 3px solid #e2e8f0;
     border-radius: 16px;
     font-size: 18px;
@@ -93,7 +102,63 @@ h1 {
     color: #2d3748;
     outline: none;
     transition: all 0.3s ease;
-    margin-bottom: 25px;
+}
+
+.audio-btn-inside {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.audio-btn-inside:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.audio-btn-inside:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+
+
+.audio-btn {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.audio-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(72, 187, 120, 0.4);
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+}
+
+.audio-btn:active {
+    transform: translateY(0);
+}
+
+.audio-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
 }
 
 #wordInput:focus {
@@ -294,6 +359,16 @@ body.dark-mode .word-list {
     color: #e2e8f0;
 }
 
+body.dark-mode .audio-btn {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+}
+
+body.dark-mode .audio-btn:hover {
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+}
+
+
+
 @media (max-width: 768px) {
     .container {
         padding: 30px 20px;
@@ -333,4 +408,19 @@ body.dark-mode .word-list {
     body.dark-mode .toggle-slider {
         transform: translateX(30px);
     }
+    
+    .input-with-audio {
+        max-width: 100%;
+    }
+    
+    #wordInput {
+        padding: 18px 55px 18px 20px;
+    }
+    
+    .audio-btn-inside {
+        right: 12px;
+        font-size: 18px;
+    }
+    
+
 }
